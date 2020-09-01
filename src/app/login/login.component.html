@@ -1,0 +1,28 @@
+
+<div class="login-form-container">
+    <h2 class="jumbotron"> Login Form </h2>
+   
+    <strong *ngIf="submitMessage" class="error-message">{{submitMessage}}</strong>
+   
+     <form action="" [formGroup]="loginForm" class="login-form" (ngSubmit)="loginSubmit(loginForm)">
+   
+         <mat-form-field>
+             <input matInput placeholder="Enter UserName" formControlName="username" class="username">
+             <mat-error *ngIf="loginForm.get('username').hasError('required') && loginForm.get('username').touched">Enter username</mat-error>
+             <mat-error *ngIf="loginForm.get('username').hasError('minlength') && loginForm.get('username').touched">UserName must be min 5 characters</mat-error>
+       
+           </mat-form-field>
+   
+         <mat-form-field>
+             <input matInput type="password" placeholder="Enter Password" formControlName="password" class="password">
+             <mat-error *ngIf="loginForm.get('password').hasError('required') && loginForm.get('password').touched">Enter password</mat-error>
+             <mat-error *ngIf="loginForm.get('password').hasError('minlength') && loginForm.get('password').touched">password must be min 6 characters</mat-error>
+       
+           </mat-form-field>
+   
+           <button mat-button type="submit" class="login-button" [disabled]="loginForm.invalid">Submit</button>
+     </form>
+   
+   
+   
+   </div>

@@ -1,0 +1,10 @@
+.edit-note-form-container{
+    display: flex;
+    flex-direction: column;
+}
+.keep-c-done-wrapper{
+    display: flex;
+}
+.editTitle{
+    display: flex;
+ }
